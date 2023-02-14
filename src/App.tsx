@@ -9,6 +9,11 @@ function App(): JSX.Element {
             </header>
             <h2>Second Header</h2>
             <img src="..assets/panda.png" alt="Cute panda holding a tree." />
+            <ol>
+                <li>They are no longer endangered.</li>
+                <li>They are very fluffy.</li>
+                <li>They act like toddlers.</li>
+            </ol>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. Hello World!!!!!
