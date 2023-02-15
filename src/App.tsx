@@ -18,6 +18,13 @@ function App(): JSX.Element {
                     <Row>
                         <Col>
                             <img src={img} alt="My siblings and I." />
+                            <div
+                                style={{
+                                    height: "20px",
+                                    width: "40px",
+                                    backgroundColor: "red"
+                                }}
+                            ></div>
                         </Col>
                         <Col>
                             <ol>
@@ -25,6 +32,13 @@ function App(): JSX.Element {
                                 <li>I am the middle child. </li>
                                 <li>My sister Yasmine is the youngest.</li>
                             </ol>
+                            <div
+                                style={{
+                                    height: "20px",
+                                    width: "40px",
+                                    backgroundColor: "red"
+                                }}
+                            ></div>
                         </Col>
                     </Row>
                 </Container>
