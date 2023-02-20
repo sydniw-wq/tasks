@@ -23,6 +23,12 @@ export function add3(first: number, second: number, third: number): number {
         sum = sum + first + third;
     } else if (first > 0 && second > 0 && third <= 0) {
         sum = sum + first + second;
+    } else if (first > 0 && second <= 0 && third <= 0) {
+        sum = sum + first;
+    } else if (first <= 0 && second > 0 && third <= 0) {
+        sum = sum + second;
+    } else if (first <= 0 && second <= 0 && third > 0) {
+        sum = sum + third;
     } else {
         sum = 0;
     }
