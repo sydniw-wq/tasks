@@ -111,7 +111,25 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    let sum = 0;
+    let str1 = "";
+    let str2: string[] = [];
+    let str3 = "";
+
+    if (addends.length < 1) {
+        return "0=0";
+    } else {
+        sum = addends.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        str1 = sum.toString() + "=";
+        str2 = addends.map((addend: number): string => addend.toString());
+        str3 = str2.join("+");
+        str1 = str1 + str3;
+
+        return str1;
+    }
 }
 
 /**
