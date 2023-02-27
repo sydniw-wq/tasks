@@ -142,5 +142,31 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    let negInd = 0;
+    let sum = 0;
+    let negCheck: number[] = [];
+    let num1: number[] = [];
+    let check = false;
+    const clone = [...values];
+
+    check = clone.every((value: number): boolean => value > 0);
+
+    if (check == true) {
+        sum = clone.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        num1 = [...clone, sum];
+        return num1;
+    } else {
+        negInd = clone.findIndex((value: number): boolean => value < 0);
+        negCheck = clone.slice(0, negInd);
+        sum = negCheck.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        clone.splice(negInd + 1, 0, sum);
+        num1 = clone;
+        return num1;
+    }
 }
