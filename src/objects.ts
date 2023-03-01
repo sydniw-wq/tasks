@@ -10,7 +10,22 @@ export function makeBlankQuestion(
     name: string,
     type: QuestionType
 ): Question {
-    return {};
+    const body = "";
+    const expected = "";
+    const options: string[] = [];
+    const points = 1;
+    const published = false;
+
+    return {
+        id: id,
+        name: name,
+        type: type,
+        body: body,
+        expected: expected,
+        options: options,
+        points: points,
+        published: published
+    };
 }
 
 /**
