@@ -52,7 +52,22 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    const clones: string[] = [...question.options];
+    let checks: boolean[] = [];
+    let final = false;
+    if (question.type == "short_answer_question") {
+        return true;
+    } else {
+        checks = clones.map((clone: string): boolean =>
+            clone === answer ? true : false
+        );
+        final = checks.every((): boolean => false);
+        if (final == false) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 /**
