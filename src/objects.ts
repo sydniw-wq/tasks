@@ -100,7 +100,18 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-    return "";
+    const line1 = "# " + question.name;
+    const line2 = question.body;
+    const clones = question.options;
+    let multi: string[] = [];
+    let together = "";
+    if (question.type == "multiple_choice_question") {
+        multi = clones.map((clone: string): string => "- " + clone);
+        together = multi.join("\n");
+        return line1 + "\n" + line2 + "\n" + together;
+    } else {
+        return line1 + "\n" + line2;
+    }
 }
 
 /**
