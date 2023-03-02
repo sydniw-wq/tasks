@@ -51,19 +51,21 @@ export function isCorrect(question: Question, answer: string): boolean {
  * any answer is valid. But for a `multiple_choice_question`, the `answer` must
  * be exactly one of the options.
  */
-//COME BACK TO
 export function isValid(question: Question, answer: string): boolean {
     const clones: string[] = [...question.options];
     let checks: boolean[] = [];
-    let final = false;
+    let num1: number[] = [];
+    let count = 0;
+
     if (question.type == "short_answer_question") {
         return true;
     } else {
         checks = clones.map((clone: string): boolean =>
             clone === answer ? true : false
         );
-        final = checks.every((): boolean => false);
-        if (final == false) {
+        num1 = checks.map((check: boolean): number => Number(check));
+        count = num1.reduce((total: number, num: number) => total + num, 0);
+        if (count == 1) {
             return true;
         } else {
             return false;
