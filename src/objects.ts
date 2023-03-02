@@ -184,5 +184,9 @@ export function mergeQuestion(
     contentQuestion: Question,
     { points }: { points: number }
 ): Question {
-    return contentQuestion;
+    const newQuestion = { ...contentQuestion };
+    const point = points;
+    newQuestion.published = false;
+    newQuestion.points = point;
+    return newQuestion;
 }
