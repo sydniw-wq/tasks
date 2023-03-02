@@ -190,5 +190,7 @@ export function mergeQuestion(
     const point = points;
     newQuestion.published = false;
     newQuestion.points = point;
+    newQuestion.id = id;
+    newQuestion.name = name;
     return newQuestion;
 }
