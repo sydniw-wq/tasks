@@ -51,6 +51,7 @@ export function isCorrect(question: Question, answer: string): boolean {
  * any answer is valid. But for a `multiple_choice_question`, the `answer` must
  * be exactly one of the options.
  */
+//COME BACK TO
 export function isValid(question: Question, answer: string): boolean {
     const clones: string[] = [...question.options];
     let checks: boolean[] = [];
@@ -77,7 +78,8 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-    return "";
+    const clones = question.name.slice(0, 10);
+    return question.id + ": " + clones;
 }
 
 /**
