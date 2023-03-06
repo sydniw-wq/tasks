@@ -202,7 +202,14 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    const deepCopy = questions.map(
+        (question: Question): Question => ({ ...question })
+    );
+    const index = deepCopy.findIndex(
+        (question: Question): boolean => question.id == targetId
+    );
+    deepCopy[index].name = newName;
+    return deepCopy;
 }
 
 /***
@@ -217,7 +224,17 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    const deepCopy = questions.map(
+        (question: Question): Question => ({ ...question })
+    );
+    const index = deepCopy.findIndex(
+        (question: Question): boolean => question.id == targetId
+    );
+    deepCopy[index].type = newQuestionType;
+    if (deepCopy[index].type == "short_answer_question") {
+        deepCopy[index].options = [];
+    }
+    return deepCopy;
 }
 
 /**
