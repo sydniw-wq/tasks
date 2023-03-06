@@ -152,7 +152,20 @@ export function publishAll(questions: Question[]): Question[] {
  * are the same type. They can be any type, as long as they are all the SAME type.
  */
 export function sameType(questions: Question[]): boolean {
-    return false;
+    const clones = [...questions];
+    const short = clones.every(
+        (clone: Question): boolean => clone.type == "short_answer_question"
+    );
+    const multiple = clones.every(
+        (clone: Question): boolean => clone.type == "multiple_choice_question"
+    );
+    if (short == true) {
+        return true;
+    } else if (multiple == true) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /***
