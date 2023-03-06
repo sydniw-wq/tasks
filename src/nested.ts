@@ -36,7 +36,18 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
-    return null;
+    if (questions.length > 0) {
+        const finalQuestion = questions.filter(
+            (question: Question): boolean => question.id == id
+        );
+        if (finalQuestion.length < 1) {
+            return null;
+        } else {
+            return finalQuestion[0];
+        }
+    } else {
+        return null;
+    }
 }
 
 /**
