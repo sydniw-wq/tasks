@@ -140,11 +140,21 @@ export function makeAnswers(questions: Question[]): Answer[] {
     const deepCopy = questions.map(
         (question: Question): Question => ({ ...question })
     );
-    const questionId = question.id;
-    const text = "";
-    const submitted = false;
-    const correct = false;
-    return [];
+    function makeBlankAnswer(questionId: number): Answer {
+        const text = "";
+        const submitted = false;
+        const correct = false;
+        return {
+            questionId: questionId,
+            text: text,
+            submitted: submitted,
+            correct: correct
+        };
+    }
+    const newArr = deepCopy.map(
+        (question: Question): Answer => makeBlankAnswer(question.id)
+    );
+    return newArr;
 }
 
 /***
