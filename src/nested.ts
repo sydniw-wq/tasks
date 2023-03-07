@@ -137,6 +137,13 @@ export function toCSV(questions: Question[]): string {
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
 export function makeAnswers(questions: Question[]): Answer[] {
+    const deepCopy = questions.map(
+        (question: Question): Question => ({ ...question })
+    );
+    const questionId = question.id;
+    const text = "";
+    const submitted = false;
+    const correct = false;
     return [];
 }
 
@@ -256,18 +263,22 @@ export function editOption(
     const deepCopy = questions.map(
         (question: Question): Question => ({
             ...question,
-            options: { ...question.options }
+            options: [...question.options]
         })
     );
     const index = deepCopy.findIndex(
         (question: Question): boolean => question.id == targetId
     );
-    if (targetOptionIndex == -1) {
-        deepCopy[index].options.push(newOption);
-    } else {
-        deepCopy[index].options[targetOptionIndex] = newOption;
-    }
 
+    const optArr = deepCopy[index].options;
+    let optArr2: string[] = [];
+    if (targetOptionIndex == -1) {
+        optArr2 = [...optArr, newOption];
+    } else {
+        optArr.splice(targetOptionIndex, 1, newOption);
+        optArr2 = optArr;
+    }
+    deepCopy[index].options = optArr2;
     return deepCopy;
 }
 
