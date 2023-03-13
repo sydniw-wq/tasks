@@ -14,18 +14,26 @@ export function ChooseTeam(): JSX.Element {
     const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
-    function chooseMember() {
-        /*
+    function chooseMember(newMember: string) {
+        const newPeople = [...team, newMember];
         if (!team.includes(newMember)) {
-            team.push(newMember);
+            setTeam(newPeople);
         }
-        */
+
+        const index = allOptions.indexOf(newMember);
+        const copy = [...allOptions];
+        copy.splice(index, 1, newMember);
+        let final: string[] = [];
+        final = copy;
+        setAllOptions(final);
     }
 
-    function clearTeam() {
-        /*
-        team = [];
-        */
+    function clearTeam(people: string[]) {
+        const copy = [...people];
+        copy.splice(0, copy.length);
+        let final: string[] = [];
+        final = copy;
+        setTeam(final);
     }
 
     return (
@@ -36,7 +44,10 @@ export function ChooseTeam(): JSX.Element {
                     {allOptions.map((option: string) => (
                         <div key={option} style={{ marginBottom: "4px" }}>
                             Add{" "}
-                            <Button onClick={chooseMember} size="sm">
+                            <Button
+                                onClick={() => chooseMember(option)}
+                                size="sm"
+                            >
                                 {option}
                             </Button>
                         </div>
@@ -47,7 +58,7 @@ export function ChooseTeam(): JSX.Element {
                     {team.map((member: string) => (
                         <li key={member}>{member}</li>
                     ))}
-                    <Button onClick={clearTeam}>Clear Team</Button>
+                    <Button onClick={() => clearTeam(team)}>Clear Team</Button>
                 </Col>
             </Row>
         </div>

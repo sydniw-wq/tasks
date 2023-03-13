@@ -8,9 +8,9 @@ import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
 import { DoubleHalf } from "./bad-components/DoubleHalf";
+import { ChooseTeam } from "./bad-components/ChooseTeam";
 //import { ColoredBox } from "./bad-components/ColoredBox";
 //import { ShoveBox } from "./bad-components/ShoveBox";
-//import { ChooseTeam } from "./bad-components/ChooseTeam";
 
 function App(): JSX.Element {
     return (
@@ -25,6 +25,7 @@ function App(): JSX.Element {
             <TwoDice></TwoDice>
             <CycleHoliday></CycleHoliday>
             <DoubleHalf></DoubleHalf>
+            <ChooseTeam></ChooseTeam>
         </div>
     );
 }
