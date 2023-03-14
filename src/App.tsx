@@ -10,7 +10,7 @@ import { Counter } from "./components/Counter";
 import { DoubleHalf } from "./bad-components/DoubleHalf";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
 import { ColoredBox } from "./bad-components/ColoredBox";
-//import { ShoveBox } from "./bad-components/ShoveBox";
+import { ShoveBox } from "./bad-components/ShoveBox";
 
 function App(): JSX.Element {
     return (
@@ -27,6 +27,7 @@ function App(): JSX.Element {
             <DoubleHalf></DoubleHalf>
             <ChooseTeam></ChooseTeam>
             <ColoredBox></ColoredBox>
+            <ShoveBox></ShoveBox>
         </div>
     );
 }
