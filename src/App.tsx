@@ -11,15 +11,12 @@ import { DoubleHalf } from "./bad-components/DoubleHalf";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
 import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
-<<<<<<< HEAD
-=======
-import { ChooseTeam } from "./bad-components/ChooseTeam";
+
 import { CheckAnswer } from "./form-components/CheckAnswer";
 import { GiveAttempts } from "./form-components/GiveAttempts";
-import { EditMode } from "./form-components/EditMode";
-import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
-import { ChangeColor } from "./form-components/ChangeColor";
->>>>>>> upstream/task-forms
+//import { EditMode } from "./form-components/EditMode";
+//import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
+//import { ChangeColor } from "./form-components/ChangeColor";
 
 function App(): JSX.Element {
     return (
@@ -27,31 +24,16 @@ function App(): JSX.Element {
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript, Sydni Wright
             </header>
-<<<<<<< HEAD
-=======
-            <hr></hr>
+
             <CheckAnswer expectedAnswer="42"></CheckAnswer>
-            <hr></hr>
-            <GiveAttempts></GiveAttempts>
-            <hr></hr>
-            <EditMode></EditMode>
-            <hr></hr>
-            <ChangeColor></ChangeColor>
-            <hr></hr>
-            <MultipleChoiceQuestion
+            {<GiveAttempts></GiveAttempts>}
+            {/*<EditMode></EditMode>*/}
+            {/*<ChangeColor></ChangeColor>*/}
+            {/*<MultipleChoiceQuestion
                 options={["a", "b", "c"]}
                 expectedAnswer="b"
-            ></MultipleChoiceQuestion>
-            <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
-            <hr></hr>
-            <ChooseTeam></ChooseTeam>
-            <hr></hr>
-            <ColoredBox></ColoredBox>
-            <hr></hr>
-            <ShoveBox></ShoveBox>
-            <hr></hr>
->>>>>>> upstream/task-forms
+            ></MultipleChoiceQuestion>*/}
+
             <Counter></Counter>
             <RevealAnswer></RevealAnswer>
             <ChangeType></ChangeType>
