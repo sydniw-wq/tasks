@@ -15,7 +15,14 @@ export function ChangeColor(): JSX.Element {
                 name="colors"
                 onChange={updateColor}
                 id="color-check-red"
-                label={<div style={{ backgroundColor: "red" }}>red</div>}
+                label={
+                    <div
+                        data-testid="colored-box"
+                        style={{ backgroundColor: "red" }}
+                    >
+                        red
+                    </div>
+                }
                 value="red"
                 checked={color === "red"}
             />
@@ -25,7 +32,14 @@ export function ChangeColor(): JSX.Element {
                 name="colors"
                 onChange={updateColor}
                 id="color-check-orange"
-                label={<div style={{ backgroundColor: "orange" }}>orange</div>}
+                label={
+                    <div
+                        data-testid="colored=box"
+                        style={{ backgroundColor: "orange" }}
+                    >
+                        orange
+                    </div>
+                }
                 value="orange"
                 checked={color === "orange"}
             />
@@ -35,7 +49,14 @@ export function ChangeColor(): JSX.Element {
                 name="colors"
                 onChange={updateColor}
                 id="color-check-yellow"
-                label={<div style={{ backgroundColor: "yellow" }}>yellow</div>}
+                label={
+                    <div
+                        data-testid="colored=box"
+                        style={{ backgroundColor: "yellow" }}
+                    >
+                        yellow
+                    </div>
+                }
                 value="yellow"
                 checked={color === "yellow"}
             />
@@ -45,7 +66,14 @@ export function ChangeColor(): JSX.Element {
                 name="colors"
                 onChange={updateColor}
                 id="color-check-green"
-                label={<div style={{ backgroundColor: "green" }}>green</div>}
+                label={
+                    <div
+                        data-testid="colored=box"
+                        style={{ backgroundColor: "green" }}
+                    >
+                        green
+                    </div>
+                }
                 value="green"
                 checked={color === "green"}
             />
@@ -55,7 +83,14 @@ export function ChangeColor(): JSX.Element {
                 name="colors"
                 onChange={updateColor}
                 id="color-check-blue"
-                label={<div style={{ backgroundColor: "blue" }}>blue</div>}
+                label={
+                    <div
+                        data-testid="colored=box"
+                        style={{ backgroundColor: "blue" }}
+                    >
+                        blue
+                    </div>
+                }
                 value="blue"
                 checked={color === "blue"}
             />
@@ -65,7 +100,14 @@ export function ChangeColor(): JSX.Element {
                 name="colors"
                 onChange={updateColor}
                 id="color-check-purple"
-                label={<div style={{ backgroundColor: "purple" }}>purple</div>}
+                label={
+                    <div
+                        data-testid="colored=box"
+                        style={{ backgroundColor: "purple" }}
+                    >
+                        purple
+                    </div>
+                }
                 value="purple"
                 checked={color === "purple"}
             />
@@ -75,7 +117,14 @@ export function ChangeColor(): JSX.Element {
                 name="colors"
                 onChange={updateColor}
                 id="color-check-pink"
-                label={<div style={{ backgroundColor: "pink" }}>pink</div>}
+                label={
+                    <div
+                        data-testid="colored=box"
+                        style={{ backgroundColor: "pink" }}
+                    >
+                        pink
+                    </div>
+                }
                 value="pink"
                 checked={color === "pink"}
             />
@@ -85,14 +134,27 @@ export function ChangeColor(): JSX.Element {
                 name="colors"
                 onChange={updateColor}
                 id="color-check-grey"
-                label={<div style={{ backgroundColor: "grey" }}>grey</div>}
+                label={
+                    <div
+                        data-testid="colored=box"
+                        style={{ backgroundColor: "grey" }}
+                    >
+                        grey
+                    </div>
+                }
                 value="grey"
                 checked={color === "grey"}
             />
 
             <div>
                 You have chosen{" "}
-                <span style={{ backgroundColor: color }}>{color}</span>.
+                <span
+                    data-testid="colored=box"
+                    style={{ backgroundColor: color }}
+                >
+                    {color}
+                </span>
+                .
             </div>
         </div>
     );
